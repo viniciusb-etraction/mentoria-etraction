@@ -1,0 +1,2556 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Mentoria prática de vendas no TikTok Shop e no Mercado Livre da e.TRACTION.">
+    <meta name="theme-color" content="#09090b">
+    <title>Mentoria TikTok Shop e Mercado Livre | e.TRACTION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #e42921;
+            --red-bright: #ff5b52;
+            --ink: #09090b;
+            --ink-2: #111216;
+            --paper: #f7f7f5;
+            --white: #fff;
+            --muted: #85878e;
+            --line: rgba(255, 255, 255, .11);
+            --line-dark: rgba(9, 9, 11, .11);
+            --container: min(1240px, calc(100% - 48px));
+            --ease: cubic-bezier(.22, .85, .26, 1)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        body.menu-open {
+            overflow: hidden
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit
+        }
+
+        ::selection {
+            color: #fff;
+            background: var(--red)
+        }
+
+        .container {
+            width: var(--container);
+            margin-inline: auto
+        }
+
+        .section {
+            padding: 118px 0;
+            position: relative
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 22px;
+            color: var(--red);
+            font: 700 12px/1.15 "Manrope", sans-serif;
+            letter-spacing: .15em;
+            text-transform: uppercase
+        }
+
+        .eyebrow:before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            box-shadow: 0 0 0 7px rgba(228, 41, 33, .1)
+        }
+
+        .section-title {
+            max-width: 920px;
+            margin: 0;
+            font: 800 clamp(38px, 5.2vw, 76px)/.96 "Manrope", sans-serif;
+            letter-spacing: -.06em;
+            text-wrap: balance
+        }
+
+        .section-copy {
+            max-width: 690px;
+            margin: 26px 0 0;
+            color: #686a71;
+            font-size: clamp(16px, 1.25vw, 18px);
+            line-height: 1.68
+        }
+
+        .red {
+            color: var(--red)
+        }
+
+        .btn {
+            min-height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 23px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .25s var(--ease), background .25s ease, box-shadow .25s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-3px)
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: var(--red);
+            box-shadow: 0 14px 34px rgba(228, 41, 33, .25)
+        }
+
+        .btn-primary:hover {
+            background: var(--red-bright);
+            box-shadow: 0 18px 42px rgba(228, 41, 33, .34)
+        }
+
+        .btn-ghost {
+            color: #fff;
+            border-color: rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .04)
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 3000;
+            padding: 12px 16px;
+            color: #fff;
+            background: var(--red);
+            transform: translateY(-150%)
+        }
+
+        .skip-link:focus {
+            transform: translateY(0)
+        }
+
+        .site-header {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 1000;
+            height: 82px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            color: #fff;
+            transition: height .25s ease, background .25s ease, border-color .25s ease
+        }
+
+        .site-header.scrolled,
+        .menu-open .site-header {
+            height: 70px;
+            background: rgba(9, 9, 11, .84);
+            border-color: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(18px) saturate(150%)
+        }
+
+        .header-inner {
+            width: var(--container);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 22px
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            width: 176px;
+            color: #fff;
+            font: 800 21px/1 "Manrope", sans-serif;
+            letter-spacing: -.07em
+        }
+
+        .brand-mark {
+            color: var(--red-bright);
+            margin-right: 2px
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 3px
+        }
+
+        .main-nav a {
+            padding: 10px 12px;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, .68);
+            font-size: 13px;
+            font-weight: 600;
+            transition: color .2s ease, background .2s ease
+        }
+
+        .main-nav a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, .07)
+        }
+
+        .header-cta {
+            justify-self: end
+        }
+
+        .header-cta .btn {
+            min-height: 44px;
+            padding-inline: 18px;
+            font-size: 13px
+        }
+
+        .menu-toggle {
+            display: none;
+            justify-self: end;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-radius: 50%;
+            color: #fff;
+            background: rgba(255, 255, 255, .04);
+            cursor: pointer
+        }
+
+        .menu-toggle span,
+        .menu-toggle span:before,
+        .menu-toggle span:after {
+            position: relative;
+            display: block;
+            width: 18px;
+            height: 2px;
+            margin: auto;
+            background: currentColor;
+            transition: .25s ease
+        }
+
+        .menu-toggle span:before,
+        .menu-toggle span:after {
+            position: absolute;
+            left: 0;
+            content: ""
+        }
+
+        .menu-toggle span:before {
+            top: -6px
+        }
+
+        .menu-toggle span:after {
+            top: 6px
+        }
+
+        .menu-open .menu-toggle span {
+            background: transparent
+        }
+
+        .menu-open .menu-toggle span:before {
+            top: 0;
+            transform: rotate(45deg)
+        }
+
+        .menu-open .menu-toggle span:after {
+            top: 0;
+            transform: rotate(-45deg)
+        }
+
+        .hero {
+            position: relative;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 132px 0 96px;
+            color: #fff;
+            background: radial-gradient(circle at 78% 45%, rgba(228, 41, 33, .16), transparent 28%), var(--ink)
+        }
+
+        .hero:before {
+            position: absolute;
+            inset: 0;
+            content: "";
+            opacity: .68;
+            background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: linear-gradient(to bottom, #000 35%, transparent 95%)
+        }
+
+        .hero:after {
+            position: absolute;
+            right: -180px;
+            bottom: -260px;
+            width: 560px;
+            height: 560px;
+            content: "";
+            border: 80px solid rgba(228, 41, 33, .09);
+            border-radius: 50%
+        }
+
+        .hero-layout {
+            position: relative;
+            z-index: 1;
+            width: var(--container);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1.02fr .98fr;
+            align-items: center;
+            gap: 52px
+        }
+
+        .hero-copy {
+            padding-bottom: 30px
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 27px;
+            padding: 8px 13px 8px 9px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 999px;
+            color: rgba(255, 255, 255, .7);
+            background: rgba(255, 255, 255, .045);
+            font: 600 12px/1 "Manrope", sans-serif;
+            letter-spacing: .06em;
+            text-transform: uppercase
+        }
+
+        .hero-badge i {
+            display: grid;
+            place-items: center;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--red);
+            font-style: normal
+        }
+
+        .hero h1 {
+            max-width: 720px;
+            margin: 0;
+            font: 800 clamp(50px, 6.6vw, 96px)/.91 "Manrope", sans-serif;
+            letter-spacing: -.075em
+        }
+
+        .hero h1 .stroke {
+            display: inline-block;
+            color: rgba(255, 255, 255, .04);
+            -webkit-text-stroke: 1.1px rgba(255, 255, 255, .72)
+        }
+
+        .hero h1 .accent {
+            color: var(--red-bright)
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 29px 0 0;
+            color: rgba(255, 255, 255, .66);
+            font-size: clamp(17px, 1.4vw, 20px);
+            line-height: 1.62
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 20px;
+            margin-top: 32px;
+            color: rgba(255, 255, 255, .47);
+            font-size: 13px
+        }
+
+        .hero-proof strong {
+            color: #fff
+        }
+
+        .proof-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .32)
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 570px;
+            perspective: 1100px
+        }
+
+        .orbit {
+            position: absolute;
+            inset: 50% auto auto 50%;
+            width: min(500px, 100%);
+            aspect-ratio: 1;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, .11);
+            border-radius: 50%;
+            animation: spin 20s linear infinite
+        }
+
+        .orbit:before,
+        .orbit:after {
+            position: absolute;
+            inset: 54px;
+            content: "";
+            border: 1px dashed rgba(255, 255, 255, .09);
+            border-radius: 50%
+        }
+
+        .orbit:after {
+            inset: 118px;
+            border-style: solid;
+            border-color: rgba(228, 41, 33, .28)
+        }
+
+        .orbit-point {
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--red);
+            box-shadow: 0 0 26px rgba(228, 41, 33, .8)
+        }
+
+        @keyframes spin {
+            to {
+                transform: translate(-50%, -50%) rotate(360deg)
+            }
+        }
+
+        .mentoria-dashboard {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: min(535px, 94%);
+            transform: translate(-50%, -50%) rotateY(-7deg) rotateX(3deg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 30px;
+            background: linear-gradient(155deg, rgba(28, 29, 35, .97), rgba(10, 10, 13, .96));
+            box-shadow: 0 40px 90px rgba(0, 0, 0, .48), inset 0 1px rgba(255, 255, 255, .07)
+        }
+
+        .dash-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 22px 24px 17px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .dash-brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font: 700 13px "Manrope", sans-serif
+        }
+
+        .dash-brand span {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--red);
+            box-shadow: 0 0 0 6px rgba(228, 41, 33, .12)
+        }
+
+        .live-pill {
+            padding: 7px 9px;
+            border: 1px solid rgba(78, 255, 120, .16);
+            border-radius: 999px;
+            color: #a8ffb7;
+            background: rgba(78, 255, 120, .08);
+            font: 700 10px "Manrope", sans-serif;
+            letter-spacing: .1em
+        }
+
+        .dash-body {
+            display: grid;
+            gap: 18px;
+            padding: 21px 24px 24px
+        }
+
+        .dash-period {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: rgba(255, 255, 255, .43);
+            font-size: 10px
+        }
+
+        .dash-period strong {
+            color: rgba(255, 255, 255, .8);
+            font-size: 10px
+        }
+
+        .dash-kpis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 9px
+        }
+
+        .dash-kpi {
+            min-width: 0;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .035)
+        }
+
+        .dash-kpi small {
+            display: block;
+            margin-bottom: 7px;
+            color: rgba(255, 255, 255, .45);
+            font-size: 10px
+        }
+
+        .dash-kpi strong {
+            display: block;
+            color: #fff;
+            font: 700 clamp(18px, 2vw, 25px) "Manrope", sans-serif
+        }
+
+        .dash-kpi em {
+            display: block;
+            margin-top: 5px;
+            color: #8a8c94;
+            font-size: 9px;
+            font-style: normal
+        }
+
+        .dash-kpi b {
+            display: block;
+            margin-top: 11px;
+            color: #88ee9f;
+            font-size: 10px
+        }
+
+        .chart-card {
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, .025)
+        }
+
+        .chart-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, .45);
+            font-size: 10px
+        }
+
+        .chart-top strong {
+            color: #fff;
+            font-size: 12px
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 34px 1fr 48px;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, .4);
+            font-size: 9px
+        }
+
+        .bar-row i {
+            display: block;
+            height: 9px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, .08)
+        }
+
+        .bar-row i:after {
+            display: block;
+            width: var(--bar);
+            height: 100%;
+            content: "";
+            border-radius: inherit;
+            background: #555861;
+            animation: grow 1.2s var(--ease) both
+        }
+
+        .bar-row.current i:after {
+            background: var(--red)
+        }
+
+        .bar-row b {
+            color: rgba(255, 255, 255, .72);
+            font-size: 10px;
+            text-align: right
+        }
+
+        @keyframes grow {
+            from {
+                width: 0
+            }
+        }
+
+        .dash-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px
+        }
+
+        .mini-card {
+            padding: 12px 13px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            color: rgba(255, 255, 255, .57);
+            font-size: 10px;
+            line-height: 1.45
+        }
+
+        .mini-card b {
+            display: block;
+            margin-bottom: 3px;
+            color: #fff;
+            font: 700 16px "Manrope", sans-serif
+        }
+
+        .float-card {
+            position: absolute;
+            min-width: 172px;
+            padding: 13px 15px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 17px;
+            color: #fff;
+            background: rgba(18, 19, 23, .82);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .28);
+            backdrop-filter: blur(16px);
+            animation: float 5s ease-in-out infinite
+        }
+
+        .float-card small {
+            display: block;
+            margin-bottom: 4px;
+            color: rgba(255, 255, 255, .48);
+            font-size: 10px
+        }
+
+        .float-card strong {
+            font: 700 19px "Manrope", sans-serif
+        }
+
+        .float-card.one {
+            top: 10%;
+            left: -3%
+        }
+
+        .float-card.two {
+            right: -2%;
+            bottom: 13%;
+            animation-delay: -2.2s
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-11px)
+            }
+        }
+
+        .summary {
+            position: relative;
+            z-index: 4;
+            margin-top: -34px
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+            border: 1px solid var(--line-dark);
+            border-top: 4px solid var(--red);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .96);
+            box-shadow: 0 24px 70px rgba(10, 10, 12, .12)
+        }
+
+        .summary-item {
+            min-height: 148px;
+            padding: 28px 25px;
+            border-right: 1px solid var(--line-dark)
+        }
+
+        .summary-item:last-child {
+            border-right: 0
+        }
+
+        .summary-item small {
+            display: block;
+            margin-bottom: 11px;
+            color: var(--red);
+            font: 700 10px "Manrope", sans-serif;
+            letter-spacing: .13em;
+            text-transform: uppercase
+        }
+
+        .summary-item strong {
+            display: block;
+            font: 700 15px/1.45 "Manrope", sans-serif
+        }
+
+        .method {
+            background: var(--paper)
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: .78fr 1.22fr;
+            gap: 80px;
+            align-items: start
+        }
+
+        .method-intro .section-copy {
+            max-width: 440px
+        }
+
+        .method-stack {
+            display: grid;
+            gap: 12px
+        }
+
+        .method-card {
+            display: grid;
+            grid-template-columns: 58px 1fr auto;
+            align-items: center;
+            gap: 17px;
+            padding: 20px;
+            border: 1px solid var(--line-dark);
+            border-radius: 20px;
+            background: #fff;
+            transition: transform .35s var(--ease), border-color .25s ease, box-shadow .35s ease
+        }
+
+        .method-card:hover {
+            transform: translateX(8px);
+            border-color: rgba(228, 41, 33, .35);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, .08)
+        }
+
+        .method-no {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(228, 41, 33, .3);
+            border-radius: 14px;
+            color: var(--red);
+            background: rgba(228, 41, 33, .07);
+            font: 800 12px "Manrope", sans-serif
+        }
+
+        .method-card h3 {
+            margin: 0 0 5px;
+            font: 700 17px "Manrope", sans-serif
+        }
+
+        .method-card p {
+            margin: 0;
+            color: #73757b;
+            font-size: 13px;
+            line-height: 1.55
+        }
+
+        .method-arrow {
+            color: #aaa;
+            font-size: 20px
+        }
+
+        .kickoff {
+            color: #fff;
+            background: var(--ink);
+            overflow: hidden
+        }
+
+        .kickoff:before {
+            position: absolute;
+            top: -220px;
+            right: -120px;
+            width: 540px;
+            height: 540px;
+            content: "";
+            border: 90px solid rgba(228, 41, 33, .08);
+            border-radius: 50%
+        }
+
+        .kickoff-head {
+            position: relative;
+            z-index: 1
+        }
+
+        .kickoff .eyebrow {
+            color: var(--red-bright)
+        }
+
+        .kickoff .section-copy {
+            color: rgba(255, 255, 255, .58)
+        }
+
+        .kickoff-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            margin-top: 54px;
+            border: 1px solid rgba(255, 255, 255, .1);
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .kickoff-card {
+            position: relative;
+            min-height: 265px;
+            padding: 28px;
+            background: var(--ink-2)
+        }
+
+        .kickoff-card:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 56px;
+            height: 3px;
+            content: "";
+            background: var(--red)
+        }
+
+        .kickoff-card small {
+            color: var(--red-bright);
+            font: 700 10px "Manrope", sans-serif;
+            letter-spacing: .13em;
+            text-transform: uppercase
+        }
+
+        .kickoff-card h3 {
+            margin: 34px 0 22px;
+            font: 700 20px "Manrope", sans-serif
+        }
+
+        .kickoff-card ul {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .kickoff-card li {
+            position: relative;
+            padding-left: 16px;
+            color: rgba(255, 255, 255, .59);
+            font-size: 13px;
+            line-height: 1.5
+        }
+
+        .kickoff-card li:before {
+            position: absolute;
+            top: .55em;
+            left: 0;
+            width: 5px;
+            height: 5px;
+            content: "";
+            background: var(--red)
+        }
+
+        .kickoff-result {
+            position: relative;
+            z-index: 1;
+            padding: 24px;
+            color: #fff;
+            background: var(--red);
+            font: 700 16px/1.5 "Manrope", sans-serif;
+            text-align: center
+        }
+
+        .timeline {
+            background: #ecece9
+        }
+
+        .timeline-list {
+            position: relative;
+            display: grid;
+            gap: 14px;
+            margin-top: 56px
+        }
+
+        .timeline-list:before {
+            position: absolute;
+            top: 28px;
+            bottom: 28px;
+            left: 42px;
+            width: 1px;
+            content: "";
+            background: linear-gradient(var(--red), rgba(228, 41, 33, .08))
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 86px 1fr;
+            overflow: hidden;
+            border: 1px solid rgba(9, 9, 11, .09);
+            border-radius: 20px;
+            background: #fff;
+            transition: transform .3s var(--ease), box-shadow .3s ease
+        }
+
+        .timeline-item:hover {
+            transform: translateX(6px);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, .08)
+        }
+
+        .timeline-month {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 132px;
+            color: #fff;
+            background: var(--red);
+            font: 800 27px "Manrope", sans-serif
+        }
+
+        .timeline-month.initial {
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+
+        .timeline-content {
+            display: grid;
+            grid-template-columns: 1fr .65fr 1.25fr;
+            align-items: center;
+            gap: 22px;
+            padding: 24px 28px
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 6px;
+            font: 700 17px "Manrope", sans-serif
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: #73757b;
+            font-size: 13px;
+            line-height: 1.5
+        }
+
+        .timeline-label {
+            display: block;
+            margin-bottom: 6px;
+            color: #96989e;
+            font: 700 9px "Manrope", sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+
+        .milestone {
+            padding: 13px 15px;
+            border-left: 3px solid var(--red);
+            color: #5e6066;
+            background: #f1f1ef;
+            font-size: 12px;
+            line-height: 1.5
+        }
+
+        .deliverables {
+            background: #fff
+        }
+
+        .meeting-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            margin-top: 54px;
+            border-top: 4px solid var(--red);
+            background: var(--line-dark)
+        }
+
+        .meeting-card {
+            min-height: 215px;
+            padding: 22px;
+            background: #fff
+        }
+
+        .meeting-time {
+            display: inline-flex;
+            min-height: 38px;
+            align-items: center;
+            padding: 0 13px;
+            border-radius: 999px;
+            color: #fff;
+            background: var(--red);
+            font: 700 12px "Manrope", sans-serif
+        }
+
+        .meeting-card p {
+            margin: 30px 0 0;
+            color: #66686e;
+            font-size: 14px;
+            line-height: 1.6
+        }
+
+        .receives {
+            margin-top: 100px;
+            padding: 54px;
+            border-radius: 28px;
+            color: #fff;
+            background: linear-gradient(135deg, #16171c, #09090b)
+        }
+
+        .receives-head {
+            max-width: 650px
+        }
+
+        .receives .eyebrow {
+            color: var(--red-bright)
+        }
+
+        .receives h2 {
+            margin: 0;
+            font: 800 clamp(34px, 4.5vw, 62px)/.96 "Manrope", sans-serif;
+            letter-spacing: -.06em
+        }
+
+        .receives-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin: 42px 0 0;
+            padding: 1px;
+            list-style: none;
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .receives-list li {
+            position: relative;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            padding: 18px 20px 18px 54px;
+            color: rgba(255, 255, 255, .66);
+            background: #17181d;
+            font-size: 13px;
+            line-height: 1.5
+        }
+
+        .receives-list li:before {
+            position: absolute;
+            left: 21px;
+            width: 17px;
+            height: 17px;
+            content: "";
+            background: var(--red)
+        }
+
+        .receives-list li:after {
+            position: absolute;
+            left: 25px;
+            width: 7px;
+            height: 4px;
+            content: "";
+            border-bottom: 2px solid #fff;
+            border-left: 2px solid #fff;
+            transform: rotate(-45deg)
+        }
+
+        .contact {
+            position: relative;
+            overflow: hidden;
+            padding: 106px 0;
+            color: #fff;
+            background: var(--red)
+        }
+
+        .contact:after {
+            position: absolute;
+            top: -180px;
+            right: -100px;
+            width: 460px;
+            height: 460px;
+            content: "";
+            border: 72px solid rgba(0, 0, 0, .1);
+            border-radius: 50%
+        }
+
+        .contact-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: 35px
+        }
+
+        .contact .eyebrow {
+            color: #fff
+        }
+
+        .contact h2 {
+            max-width: 790px;
+            margin: 0;
+            font: 800 clamp(42px, 6vw, 82px)/.92 "Manrope", sans-serif;
+            letter-spacing: -.07em
+        }
+
+        .contact p {
+            max-width: 640px;
+            margin: 23px 0 0;
+            color: rgba(255, 255, 255, .8);
+            font-size: 17px;
+            line-height: 1.6
+        }
+
+        .contact .btn {
+            min-height: 58px;
+            color: var(--ink);
+            background: #fff
+        }
+
+        .contact .btn:hover {
+            color: #fff;
+            background: var(--ink)
+        }
+
+        .footer {
+            padding: 58px 0 34px;
+            color: #fff;
+            background: var(--ink)
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 28px
+        }
+
+        .footer p {
+            margin: 0;
+            color: rgba(255, 255, 255, .46);
+            font-size: 12px
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .8s var(--ease), transform .8s var(--ease)
+        }
+
+        [data-reveal].visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        @media(max-width:1060px) {
+
+            .main-nav,
+            .header-cta {
+                display: none
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center
+            }
+
+            .header-inner {
+                grid-template-columns: 1fr auto
+            }
+
+            .main-nav.mobile-open {
+                position: fixed;
+                inset: 70px 0 0;
+                display: grid;
+                align-content: start;
+                gap: 4px;
+                padding: 24px;
+                background: #09090b
+            }
+
+            .main-nav.mobile-open a {
+                padding: 16px 12px;
+                border-bottom: 1px solid rgba(255, 255, 255, .08);
+                border-radius: 0;
+                font-size: 18px
+            }
+
+            .hero-layout {
+                grid-template-columns: 1fr
+            }
+
+            .hero-visual {
+                max-width: 670px;
+                width: 100%;
+                margin-inline: auto
+            }
+
+            .method-grid {
+                grid-template-columns: 1fr;
+                gap: 48px
+            }
+
+            .timeline-content {
+                grid-template-columns: 1fr .7fr
+            }
+
+            .timeline-content .milestone {
+                grid-column: 1/-1
+            }
+        }
+
+        @media(max-width:760px) {
+            :root {
+                --container: min(100% - 32px, 1240px)
+            }
+
+            .section {
+                padding: 82px 0
+            }
+
+            .site-header {
+                height: 70px
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 126px 0 74px
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 14vw, 74px)
+            }
+
+            .hero-actions .btn {
+                width: 100%
+            }
+
+            .hero-visual {
+                height: 470px
+            }
+
+            .orbit {
+                width: 390px
+            }
+
+            .mentoria-dashboard {
+                width: 100%;
+                border-radius: 22px
+            }
+
+            .dash-head {
+                padding-inline: 16px
+            }
+
+            .dash-body {
+                padding: 17px 16px
+            }
+
+            .dash-period {
+                display: block
+            }
+
+            .dash-period strong {
+                display: block;
+                margin-top: 5px
+            }
+
+            .dash-kpi {
+                padding: 10px
+            }
+
+            .dash-kpi small {
+                min-height: 25px
+            }
+
+            .dash-kpi strong {
+                font-size: 16px
+            }
+
+            .float-card {
+                min-width: 140px;
+                padding: 10px 12px
+            }
+
+            .float-card.one {
+                left: -10px
+            }
+
+            .float-card.two {
+                right: -10px
+            }
+
+            .summary {
+                margin-top: -20px
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+                border-radius: 17px
+            }
+
+            .summary-item {
+                min-height: 126px;
+                padding: 20px 16px
+            }
+
+            .summary-item:nth-child(2) {
+                border-right: 0
+            }
+
+            .summary-item:nth-child(-n+2) {
+                border-bottom: 1px solid var(--line-dark)
+            }
+
+            .summary-item strong {
+                font-size: 13px
+            }
+
+            .method-card {
+                grid-template-columns: 48px 1fr auto;
+                padding: 15px
+            }
+
+            .method-no {
+                width: 40px;
+                height: 40px
+            }
+
+            .method-card p {
+                font-size: 12px
+            }
+
+            .method-arrow {
+                display: none
+            }
+
+            .kickoff-grid,
+            .meeting-grid {
+                grid-template-columns: 1fr
+            }
+
+            .kickoff-card {
+                min-height: auto
+            }
+
+            .meeting-card {
+                min-height: 145px
+            }
+
+            .meeting-card p {
+                margin-top: 20px
+            }
+
+            .timeline-list:before {
+                left: 27px
+            }
+
+            .timeline-item {
+                grid-template-columns: 55px 1fr
+            }
+
+            .timeline-month {
+                min-height: 160px;
+                font-size: 20px
+            }
+
+            .timeline-content {
+                display: block;
+                padding: 18px
+            }
+
+            .timeline-content>* {
+                margin-bottom: 15px
+            }
+
+            .timeline-content>*:last-child {
+                margin-bottom: 0
+            }
+
+            .receives {
+                margin-top: 70px;
+                padding: 30px 18px;
+                border-radius: 20px
+            }
+
+            .receives-list {
+                grid-template-columns: 1fr;
+                margin-top: 30px
+            }
+
+            .receives-list li {
+                min-height: 70px;
+                padding-right: 14px
+            }
+
+            .contact {
+                padding: 76px 0
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                align-items: start
+            }
+
+            .contact .btn {
+                width: 100%
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                scroll-behavior: auto !important;
+                animation-duration: .001ms !important;
+                transition-duration: .001ms !important
+            }
+
+            [data-reveal] {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .channels {
+            color: #fff;
+            background: #111216;
+            overflow: hidden
+        }
+
+        .channels-shell {
+            display: grid;
+            grid-template-columns: .82fr 1.18fr;
+            gap: 64px;
+            align-items: center
+        }
+
+        .channels .eyebrow {
+            color: var(--red-bright)
+        }
+
+        .channels .section-copy {
+            color: rgba(255, 255, 255, .6)
+        }
+
+        .channel-switcher {
+            display: flex;
+            gap: 8px;
+            margin-top: 32px
+        }
+
+        .channel-tab {
+            min-height: 48px;
+            padding: 0 18px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 999px;
+            color: rgba(255, 255, 255, .62);
+            background: rgba(255, 255, 255, .04);
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .25s var(--ease), color .25s ease, background .25s ease, border-color .25s ease
+        }
+
+        .channel-tab .tiktok-logo {
+            width: 92px
+        }
+
+        .channel-tab:hover,
+        .channel-tab.is-active {
+            color: #fff;
+            background: var(--red);
+            border-color: var(--red);
+            transform: translateY(-2px)
+        }
+
+        .channel-panel {
+            position: relative;
+            min-height: 330px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 26px;
+            background: linear-gradient(145deg, #1b1c22, #0b0c0f);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .28)
+        }
+
+        .channel-panel:before {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 64px;
+            height: 3px;
+            content: "";
+            background: var(--red)
+        }
+
+        .channel-panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px
+        }
+
+        .channel-panel h3 {
+            display: flex;
+            align-items: center;
+            min-height: 40px
+        }
+
+        .channel-title-fallback {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap
+        }
+
+        .channel-panel h3 .tiktok-logo {
+            width: 170px
+        }
+
+        margin:0;
+        font:800 clamp(25px, 3vw, 40px)/1 "Manrope",
+        sans-serif;
+        letter-spacing:-.05em
+        }
+
+        .channel-panel small {
+            color: rgba(255, 255, 255, .42);
+            font-size: 11px
+        }
+
+        .channel-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #9cf4aa;
+            font-size: 11px;
+            font-weight: 700
+        }
+
+        .channel-status:before {
+            width: 7px;
+            height: 7px;
+            content: "";
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 12px rgba(74, 222, 128, .7)
+        }
+
+        .channel-panel p {
+            max-width: 560px;
+            margin: 22px 0 0;
+            color: rgba(255, 255, 255, .62);
+            line-height: 1.6
+        }
+
+        .channel-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 28px
+        }
+
+        .channel-metric {
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .035)
+        }
+
+        .channel-metric strong {
+            display: block;
+            color: #fff;
+            font: 800 24px "Manrope", sans-serif
+        }
+
+        .channel-metric span {
+            display: block;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, .42);
+            font-size: 10px
+        }
+
+        .channel-note {
+            margin-top: 22px;
+            color: rgba(255, 255, 255, .4);
+            font-size: 11px
+        }
+
+        .channel-panel[data-channel="marketplace"] {
+            background: linear-gradient(145deg, #1d1b18, #0b0c0f)
+        }
+
+        .interaction-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            color: rgba(255, 255, 255, .44);
+            font-size: 11px
+        }
+
+        .interaction-hint:before {
+            width: 6px;
+            height: 6px;
+            content: "";
+            border-radius: 50%;
+            background: var(--red);
+            animation: pulse-hint 1.8s ease-in-out infinite
+        }
+
+        @keyframes pulse-hint {
+            50% {
+                transform: scale(1.5);
+                opacity: .45
+            }
+        }
+
+        @media(max-width:1060px) {
+            .channels-shell {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:760px) {
+            .channel-switcher {
+                display: grid;
+                grid-template-columns: 1fr 1fr
+            }
+
+            .channel-tab {
+                padding-inline: 10px
+            }
+
+            .channel-panel {
+                min-height: 360px;
+                padding: 24px 18px
+            }
+
+            .channel-panel:before {
+                left: 18px
+            }
+
+            .channel-panel-head {
+                display: block
+            }
+
+            .channel-status {
+                margin-top: 14px
+            }
+
+            .channel-metrics {
+                gap: 6px
+            }
+
+            .channel-metric {
+                padding: 12px 9px
+            }
+
+            .channel-metric strong {
+                font-size: 19px
+            }
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 42px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            color: rgba(255, 255, 255, .42);
+            font-size: 11px
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, .72);
+            transition: color .2s ease
+        }
+
+        .footer-bottom a:hover {
+            color: var(--red-bright)
+        }
+
+        @media(max-width:760px) {
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px
+            }
+        }
+    </style>
+    <style>
+        .tiktok-logo {
+            width: 132px;
+            height: auto;
+            display: block;
+            filter: brightness(0) invert(1)
+        }
+
+        .hero-badge .tiktok-logo {
+            width: 108px
+        }
+
+        .hero h1 .stroke {
+            display: inline;
+            color: #a9abb2;
+            -webkit-text-stroke: 0
+        }
+
+        .summary-grid {
+            overflow: visible;
+            border: 0;
+            border-radius: 28px;
+            background: transparent;
+            box-shadow: none;
+            gap: 12px
+        }
+
+        .summary-item {
+            min-height: 180px;
+            padding: 38px 28px 30px;
+            overflow: hidden;
+            border: 1px solid rgba(9, 9, 11, .1);
+            border-radius: 24px;
+            background: linear-gradient(145deg, #fff, #f1f1ef);
+            box-shadow: 0 24px 70px rgba(10, 10, 12, .08), inset 0 1px #fff;
+            transition: transform .35s var(--ease), border-color .25s ease, box-shadow .35s ease
+        }
+
+        .summary-item:hover {
+            transform: translateY(-7px);
+            border-color: rgba(228, 41, 33, .28);
+            box-shadow: 0 30px 72px rgba(10, 10, 12, .13), 0 0 0 4px rgba(228, 41, 33, .05)
+        }
+
+        .summary-item strong {
+            font-size: 17px
+        }
+
+        .kickoff-card {
+            cursor: pointer;
+            transition: transform .35s var(--ease), background .3s ease, box-shadow .35s ease
+        }
+
+        .kickoff-card:hover,
+        .kickoff-card.is-active {
+            z-index: 2;
+            transform: translateY(-8px);
+            background: linear-gradient(145deg, #202127, #111216);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, .25)
+        }
+
+        .kickoff-card.is-active:after {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            width: 9px;
+            height: 9px;
+            content: "";
+            border-radius: 50%;
+            background: var(--red-bright);
+            box-shadow: 0 0 18px rgba(255, 91, 82, .8)
+        }
+
+        .timeline-item {
+            cursor: pointer;
+            transition: transform .35s var(--ease), box-shadow .35s ease, border-color .25s ease
+        }
+
+        .timeline-item:hover,
+        .timeline-item.is-active {
+            transform: translateX(8px) scale(1.01);
+            border-color: rgba(228, 41, 33, .3);
+            box-shadow: 0 22px 50px rgba(0, 0, 0, .12)
+        }
+
+        .timeline-item.is-active .timeline-month {
+            background: var(--ink)
+        }
+
+        .timeline-item.is-active .milestone {
+            color: #fff;
+            background: var(--red)
+        }
+
+        .timeline-item.is-active .milestone .timeline-label {
+            color: rgba(255, 255, 255, .7)
+        }
+
+        .timeline-item .timeline-content:after {
+            content: "Clique para destacar";
+            align-self: end;
+            grid-column: 1/-1;
+            color: #a0a2a7;
+            font-size: 10px;
+            opacity: 0;
+            transition: opacity .25s ease
+        }
+
+        .timeline-item:hover .timeline-content:after,
+        .timeline-item.is-active .timeline-content:after {
+            opacity: 1
+        }
+
+        @media(max-width:760px) {
+            .summary-grid {
+                gap: 10px
+            }
+
+            .summary-item {
+                min-height: 145px;
+                padding: 25px 17px 22px;
+                border-radius: 18px
+            }
+
+            .summary-item strong {
+                font-size: 14px
+            }
+
+            .timeline-item .timeline-content:after {
+                display: none
+            }
+        }
+
+        .summary {
+            z-index: 1;
+            margin-top: 0;
+            padding: 34px 0 0;
+            background: var(--paper)
+        }
+
+        .summary-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: stretch
+        }
+
+        .summary-item {
+            position: relative;
+            min-height: 190px;
+            padding: 38px 28px 28px;
+            border-radius: 0;
+            background: linear-gradient(145deg, #fff, #f0f0ee);
+            box-shadow: 0 18px 50px rgba(10, 10, 12, .07);
+        }
+
+        .summary-item:before {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            content: attr(data-index);
+            color: rgba(9, 9, 11, .15);
+            font: 800 11px "Manrope", sans-serif;
+            letter-spacing: .12em
+        }
+
+        .summary-item:after {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 0;
+            height: 3px;
+            content: "";
+            background: var(--red);
+            transform: scaleX(.2);
+            transform-origin: left;
+            transition: transform .35s var(--ease)
+        }
+
+        .summary-item:hover:after {
+            transform: scaleX(1)
+        }
+
+        .summary-item small {
+            margin-bottom: 24px
+        }
+
+        .summary-item strong {
+            font-size: clamp(20px, 2vw, 29px);
+            letter-spacing: -.045em
+        }
+
+        .summary-item p {
+            margin: 12px 0 0;
+            color: #777980;
+            font-size: 12px
+        }
+
+        .timeline {
+            color: #fff;
+            background: #111216;
+            overflow: hidden
+        }
+
+        .timeline:before {
+            position: absolute;
+            top: -240px;
+            right: -140px;
+            width: 570px;
+            height: 570px;
+            content: "";
+            border: 92px solid rgba(228, 41, 33, .07);
+            border-radius: 50%
+        }
+
+        .timeline .section-copy {
+            color: rgba(255, 255, 255, .56)
+        }
+
+        .timeline .red {
+            color: var(--red-bright)
+        }
+
+        .timeline-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 52px
+        }
+
+        .timeline-list:before {
+            display: none
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 82px 1fr;
+            min-height: 214px;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #1a1b20, #111216);
+            box-shadow: inset 0 1px rgba(255, 255, 255, .04)
+        }
+
+        .timeline-item:hover,
+        .timeline-item.is-active {
+            transform: translateY(-6px);
+            border-color: rgba(228, 41, 33, .42);
+            box-shadow: 0 22px 52px rgba(0, 0, 0, .24)
+        }
+
+        .timeline-month {
+            min-height: 100%;
+            background: var(--red);
+            font-size: 25px
+        }
+
+        .timeline-month.initial {
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: center
+        }
+
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+            padding: 25px 24px
+        }
+
+        .timeline-content h3 {
+            color: #fff;
+            font-size: 18px
+        }
+
+        .timeline-content p {
+            color: rgba(255, 255, 255, .5)
+        }
+
+        .timeline-label {
+            color: rgba(255, 255, 255, .38)
+        }
+
+        .milestone {
+            margin-top: auto;
+            color: rgba(255, 255, 255, .7);
+            background: rgba(255, 255, 255, .06);
+            border-left-color: var(--red);
+            font-size: 12px
+        }
+
+        .timeline-item.is-active .timeline-month {
+            background: var(--red-bright);
+            color: var(--ink)
+        }
+
+        .timeline-item.is-active .milestone {
+            background: var(--red);
+            color: #fff
+        }
+
+        .timeline-item .timeline-content:after {
+            display: none
+        }
+
+        .meeting-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 54px;
+            border: 0;
+            background: transparent
+        }
+
+        .meeting-card {
+            position: relative;
+            min-height: 260px;
+            padding: 28px 24px;
+            border: 1px solid rgba(9, 9, 11, .1);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #fff, #f0f0ee);
+            box-shadow: 0 18px 50px rgba(10, 10, 12, .06);
+            transition: transform .35s var(--ease), background .3s ease, box-shadow .35s ease
+        }
+
+        .meeting-card:before {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            content: attr(data-step);
+            color: rgba(9, 9, 11, .18);
+            font: 800 11px "Manrope", sans-serif
+        }
+
+        .meeting-card:hover {
+            transform: translateY(-8px);
+            color: #fff;
+            background: linear-gradient(145deg, #202127, #111216);
+            box-shadow: 0 25px 60px rgba(10, 10, 12, .16)
+        }
+
+        .meeting-card:hover p {
+            color: rgba(255, 255, 255, .65)
+        }
+
+        .meeting-time {
+            width: fit-content;
+            min-height: 0;
+            padding: 0;
+            color: var(--red);
+            background: none;
+            font: 800 clamp(28px, 3vw, 42px)/1 "Manrope", sans-serif;
+            letter-spacing: -.06em
+        }
+
+        .meeting-card p {
+            margin: 70px 0 0;
+            max-width: 180px;
+            color: #66686e;
+            font: 600 15px/1.5 "Manrope", sans-serif
+        }
+
+        @media(max-width:1060px) {
+            .timeline-list {
+                grid-template-columns: 1fr
+            }
+
+            .meeting-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:760px) {
+            .summary {
+                padding-top: 24px
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .summary-item {
+                min-height: 155px;
+                padding: 28px 18px 22px
+            }
+
+            .summary-item:after {
+                left: 18px;
+                right: 18px
+            }
+
+            .timeline-list {
+                gap: 10px
+            }
+
+            .timeline-item {
+                grid-template-columns: 62px 1fr;
+                min-height: 200px
+            }
+
+            .timeline-content {
+                padding: 20px 17px
+            }
+
+            .meeting-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px
+            }
+
+            .meeting-card {
+                min-height: 205px;
+                padding: 22px 17px;
+                border-radius: 18px
+            }
+
+            .meeting-card p {
+                margin-top: 48px;
+                font-size: 13px
+            }
+
+            .meeting-time {
+                font-size: 29px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="header">
+        <div class="header-inner"><a class="brand" href="#inicio" aria-label="e.TRACTION"><span
+                    class="brand-mark">e.</span>TRACTION</a>
+            <nav class="main-nav" id="nav" aria-label="Navegação principal"><a href="#metodo">Método</a><a
+                    href="#canais">Canais</a><a href="#diagnostico">Diagnóstico</a><a
+                    href="#cronograma">Cronograma</a><a href="#materiais">Materiais</a></nav>
+            <div class="header-cta"><a class="btn btn-primary"
+                    href="https://wa.me/5547992454021?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20de%20TikTok%20Shop%20e%20Mercado%20Livre."
+                    target="_blank" rel="noopener noreferrer">Falar com a e.TRACTION ↗</a></div><button
+                class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="nav"><span></span></button>
+        </div>
+    </header>
+    <main id="conteudo">
+        <section class="hero" id="inicio">
+            <div class="hero-layout">
+                <div class="hero-copy" data-reveal>
+                    <div class="hero-badge"><img class="tiktok-logo" src="assets/tiktok-shop-logo.svg"
+                            alt="TikTok Shop"><span>Mentoria de crescimento</span></div>
+                    <h1>Faça dos marketplaces uma <span class="stroke">operação</span> de <span
+                            class="accent">vendas.</span></h1>
+                    <p class="hero-description">Da abertura da loja à escala no TikTok Shop e no Mercado Livre: uma
+                        jornada guiada para transformar catálogo, conteúdo e mídia em uma operação consistente e
+                        lucrativa.</p>
+                    <div class="hero-actions"><a class="btn btn-primary" href="#cronograma">Conheça a jornada ↗</a><a
+                            class="btn btn-ghost" href="#metodo">Ver como funciona ↓</a></div>
+                    <div class="hero-proof"><strong>6 meses</strong> de acompanhamento <span
+                            class="proof-dot"></span><strong>9 módulos</strong> de conteúdo <span
+                            class="proof-dot"></span><strong>100% online</strong></div>
+                </div>
+                <div class="hero-visual" data-reveal>
+                    <div class="orbit"><span class="orbit-point"></span></div>
+                    <div class="mentoria-dashboard">
+                        <div class="dash-head">
+                            <div class="dash-brand"><span></span> Mentoria OS</div>
+                            <div class="live-pill">● EM EXECUÇÃO</div>
+                        </div>
+                        <div class="dash-body">
+                            <div class="dash-period"><span><img class="tiktok-logo" src="assets/tiktok-shop-logo.svg"
+                                        alt="TikTok Shop"></span><strong>CICLO 01 — 06</strong></div>
+                            <div class="dash-kpis">
+                                <article class="dash-kpi">
+                                    <small>Loja</small><strong>01</strong><em>configuração</em><b>● concluído</b>
+                                </article>
+                                <article class="dash-kpi"><small>Conteúdo</small><strong>03</strong><em>frentes
+                                        ativas</em><b>● em foco</b></article>
+                                <article class="dash-kpi"><small>Próximo marco</small><strong>LIVE</strong><em>mês
+                                        02</em><b>↗ planejado</b></article>
+                            </div>
+                            <div class="chart-card">
+                                <div class="chart-top"><strong>Progresso da jornada</strong><span>seis meses</span>
+                                </div>
+                                <div class="bar-row"><span>Base</span><i style="--bar:100%"></i><b>100%</b></div>
+                                <div class="bar-row current"><span>Conteúdo</span><i style="--bar:72%"></i><b>72%</b>
+                                </div>
+                                <div class="bar-row"><span>Escala</span><i style="--bar:38%"></i><b>38%</b></div>
+                            </div>
+                            <div class="dash-footer">
+                                <div class="mini-card"><b>01:30h</b>encontro mensal</div>
+                                <div class="mini-card"><b>04</b>etapas de evolução</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-card one"><small>Próxima missão</small><strong>Publicar LIVE</strong></div>
+                    <div class="float-card two"><small>Ritmo da operação</small><strong>+ consistência</strong></div>
+                </div>
+            </div>
+        </section>
+        <section class="summary" aria-label="Resumo da mentoria">
+            <div class="container">
+                <div class="summary-grid" data-reveal>
+                    <article class="summary-item stat" data-index="01"><small>Duração</small><strong>6 meses</strong>
+                        <p>de acompanhamento</p>
+                    </article>
+                    <article class="summary-item stat" data-index="02"><small>Formato</small><strong>100%
+                            online</strong>
+                        <p>trilha + encontros mensais</p>
+                    </article>
+                    <article class="summary-item stat" data-index="03"><small>Conteúdo</small><strong>9 módulos</strong>
+                        <p>e 7h de aulas práticas</p>
+                    </article>
+                    <article class="summary-item stat" data-index="04"><small>Ao vivo</small><strong>07
+                            encontros</strong>
+                        <p>kickoff + 6 sessões de 1h30</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section method" id="metodo">
+            <div class="container method-grid">
+                <div class="method-intro" data-reveal>
+                    <div class="eyebrow">O nosso jeito de operar</div>
+                    <h2 class="section-title">Não é assistir e esperar. É <span class="red">aprender fazendo.</span>
+                    </h2>
+                    <p class="section-copy">A mentoria transforma conhecimento em rotina: cada módulo responde a uma
+                        decisão real da sua operação e cada encontro deixa um próximo passo claro.</p>
+                </div>
+                <div class="method-stack" data-reveal>
+                    <article class="method-card">
+                        <div class="method-no">01</div>
+                        <div>
+                            <h3>Aprender</h3>
+                            <p>Aulas curtas, organizadas em sequência e disponíveis entre os encontros.</p>
+                        </div><span class="method-arrow">↗</span>
+                    </article>
+                    <article class="method-card">
+                        <div class="method-no">02</div>
+                        <div>
+                            <h3>Aplicar</h3>
+                            <p>Checklists, modelos e missões executadas diretamente na conta.</p>
+                        </div><span class="method-arrow">↗</span>
+                    </article>
+                    <article class="method-card">
+                        <div class="method-no">03</div>
+                        <div>
+                            <h3>Corrigir</h3>
+                            <p>Análise mensal para revisar conteúdo, dados e decisões de canal.</p>
+                        </div><span class="method-arrow">↗</span>
+                    </article>
+                    <article class="method-card">
+                        <div class="method-no">04</div>
+                        <div>
+                            <h3>Evoluir</h3>
+                            <p>Indicadores e plano de ação para o próximo ciclo da operação.</p>
+                        </div><span class="method-arrow">↗</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section kickoff" id="diagnostico">
+            <div class="container">
+                <div class="kickoff-head" data-reveal>
+                    <div class="eyebrow">Ponto de partida</div>
+                    <h2 class="section-title">Antes de acelerar, a gente <span class="red">entende o motor.</span></h2>
+                    <p class="section-copy">Um encontro inicial com o cliente e o time responsável organiza o cenário,
+                        revela as prioridades e transforma diagnóstico em plano de execução.</p>
+                </div>
+                <div class="kickoff-grid" data-reveal>
+                    <article class="kickoff-card"><small>Etapa 01</small>
+                        <h3>Start da operação</h3>
+                        <ul>
+                            <li>Onboarding online com o time responsável.</li>
+                            <li>Configurações iniciais da loja.</li>
+                            <li>Alinhamento de metas e objetivos.</li>
+                        </ul>
+                    </article>
+                    <article class="kickoff-card"><small>Etapa 02</small>
+                        <h3>Diagnóstico completo</h3>
+                        <ul>
+                            <li>Auditoria da conta e dos produtos.</li>
+                            <li>Análise de faturamento, tráfego e conversão.</li>
+                            <li>Avaliação de vídeos, LIVE e afiliados.</li>
+                            <li>Análise SWOT da operação.</li>
+                        </ul>
+                    </article>
+                    <article class="kickoff-card"><small>Etapa 03</small>
+                        <h3>Planejamento estratégico</h3>
+                        <ul>
+                            <li>Definição das prioridades e canais.</li>
+                            <li>Construção do cronograma de execução.</li>
+                            <li>Plano de crescimento para seis meses.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="kickoff-result">Resultado: diagnóstico consolidado, prioridades definidas e um plano de ação
+                    pronto para entrar em campo.</div>
+            </div>
+        </section>
+        <section class="section timeline" id="cronograma">
+            <div class="container">
+                <div data-reveal>
+                    <div class="eyebrow">Jornada de acompanhamento</div>
+                    <h2 class="section-title">Seis meses. Um <span class="red">próximo marco</span> por vez.</h2>
+                    <p class="section-copy">Estudo prévio, aplicação prática e acompanhamento para a operação avançar
+                        com cadência e clareza.</p>
+                </div>
+                <div class="timeline-list" data-reveal>
+                    <article class="timeline-item">
+                        <div class="timeline-month initial">Inicial</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Onboarding e diagnóstico</h3>
+                                <p>O ponto de partida da operação.</p>
+                            </div>
+                            <div><span class="timeline-label">Estudo prévio</span>
+                                <p>Antes da trilha</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Loja configurada, auditoria
+                                e plano de execução.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">01</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Loja, produtos e promoções</h3>
+                                <p>A base comercial do canal.</p>
+                            </div>
+                            <div><span class="timeline-label">Módulos</span>
+                                <p>01 a 03</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Catálogo organizado e
+                                primeiros cupons ativos.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">02</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Vídeos curtos e LIVE Commerce</h3>
+                                <p>Conteúdo que conversa com venda.</p>
+                            </div>
+                            <div><span class="timeline-label">Módulos</span>
+                                <p>04 e 05</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Vídeo comprável publicado e
+                                primeira LIVE no ar.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">03</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Afiliados e criadores</h3>
+                                <p>Mais vozes para a marca.</p>
+                            </div>
+                            <div><span class="timeline-label">Módulo</span>
+                                <p>06</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Programa ativo, criadores
+                                recrutados e amostras enviadas.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">04</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Logística e operações</h3>
+                                <p>O bastidor que sustenta escala.</p>
+                            </div>
+                            <div><span class="timeline-label">Módulo</span>
+                                <p>07</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Fluxo de pedidos e NF-e
+                                configurados.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">05</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Financeiro e regras</h3>
+                                <p>Controle para decidir melhor.</p>
+                            </div>
+                            <div><span class="timeline-label">Módulos</span>
+                                <p>08 e 09</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Relatório financeiro
+                                dominado e conformidade revisada.</div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-month">06</div>
+                        <div class="timeline-content">
+                            <div>
+                                <h3>Revisão geral e encerramento</h3>
+                                <p>O próximo ciclo começa aqui.</p>
+                            </div>
+                            <div><span class="timeline-label">Estudo</span>
+                                <p>Todos os módulos</p>
+                            </div>
+                            <div class="milestone"><span class="timeline-label">Marco</span>Plano de crescimento e
+                                encerramento da mentoria.</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section deliverables" id="materiais">
+            <div class="container">
+                <div data-reveal>
+                    <div class="eyebrow">Encontros mensais</div>
+                    <h2 class="section-title">Cada encontro termina com <span class="red">direção.</span></h2>
+                    <p class="section-copy">Uma conversa online de 1h30 para tirar dúvidas, olhar os dados e transformar
+                        análise em prioridade.</p>
+                </div>
+                <div class="meeting-grid" data-reveal>
+                    <article class="meeting-card" data-step="01"><span class="meeting-time">10 min</span>
+                        <p>Acompanhamento das metas e avanços do mês.</p>
+                    </article>
+                    <article class="meeting-card" data-step="01"><span class="meeting-time">20 min</span>
+                        <p>Dúvidas sobre os módulos e tarefas executadas.</p>
+                    </article>
+                    <article class="meeting-card" data-step="01"><span class="meeting-time">45 min</span>
+                        <p>Análise prática de vídeos, LIVEs, afiliados e campanhas.</p>
+                    </article>
+                    <article class="meeting-card" data-step="01"><span class="meeting-time">15 min</span>
+                        <p>Prioridades e entregas para o mês seguinte.</p>
+                    </article>
+                </div>
+                <div class="receives" data-reveal>
+                    <div class="receives-head">
+                        <div class="eyebrow">Conteúdos e materiais</div>
+                        <h2>Você recebe o mapa. E aprende a <span class="red">ler o terreno.</span></h2>
+                    </div>
+                    <ul class="receives-list">
+                        <li>Acesso à trilha gravada durante os 6 meses.</li>
+                        <li>Encontro inicial para onboarding, diagnóstico e planejamento.</li>
+                        <li>6 encontros mensais com duração de 1h30.</li>
+                        <li>Checklist de configuração e diagnóstico da loja.</li>
+                        <li>Ficha de análise de produto e seleção para viralização.</li>
+                        <li>Modelo de briefing para vídeos compráveis.</li>
+                        <li>Checklist técnico para LIVEs.</li>
+                        <li>Calendário comercial de 30 dias.</li>
+                        <li>Checklist de afiliados e guia de recrutamento.</li>
+                        <li>Painel de indicadores e certificado de participação.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section channels" id="canais">
+            <div class="container channels-shell">
+                <div data-reveal>
+                    <div class="eyebrow">Dois canais. Uma operação.</div>
+                    <h2 class="section-title">A mentoria acompanha o cliente onde a <span class="red">compra
+                            acontece.</span></h2>
+                    <p class="section-copy">TikTok Shop para descoberta, vídeo e LIVE Commerce. Mercado Livre para
+                        catálogo, reputação, logística e conversão. A estratégia conecta os dois sem tratar nenhum deles
+                        como ilha.</p>
+                    <div class="channel-switcher" role="tablist" aria-label="Selecionar canal"><button
+                            class="channel-tab is-active" type="button" role="tab" aria-label="TikTok Shop"
+                            aria-selected="true" data-channel-tab="tiktok"><img class="tiktok-logo"
+                                src="assets/tiktok-shop-logo.svg" alt="TikTok Shop"></button><button class="channel-tab"
+                            type="button" role="tab" aria-selected="false" data-channel-tab="marketplace">Mercado
+                            Livre</button></div><span class="interaction-hint">Clique para alternar o foco da
+                        operação</span>
+                </div>
+                <div class="channel-panel" id="channelPanel" data-channel="tiktok" data-reveal>
+                    <div class="channel-panel-head">
+                        <div><small>CANAL EM FOCO</small>
+                            <h3 id="channelTitle"><img class="tiktok-logo" src="assets/tiktok-shop-logo.svg"
+                                    alt="TikTok Shop"><span class="channel-title-fallback">TikTok Shop</span></h3>
+                        </div><span class="channel-status" id="channelStatus">estrutura em construção</span>
+                    </div>
+                    <p id="channelDescription">Conteúdo comprável, LIVE Commerce, criadores e afiliados trabalhando
+                        juntos para gerar descoberta e intenção de compra.</p>
+                    <div class="channel-metrics">
+                        <div class="channel-metric"><strong id="metricOne">LIVE</strong><span
+                                id="metricOneLabel">formato prioritário</span></div>
+                        <div class="channel-metric"><strong id="metricTwo">03</strong><span id="metricTwoLabel">frentes
+                                de conteúdo</span></div>
+                        <div class="channel-metric"><strong id="metricThree">01</strong><span
+                                id="metricThreeLabel">canal em ativação</span></div>
+                    </div>
+                    <div class="channel-note" id="channelNote">Próximo passo: publicar, medir e corrigir o primeiro
+                        ciclo.</div>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contato">
+            <div class="container contact-inner">
+                <div data-reveal>
+                    <div class="eyebrow">Fale com a e.TRACTION</div>
+                    <h2>Pronto para transformar atenção em <span style="color:#09090b">operação?</span></h2>
+                    <p>Converse com nosso time para entender como funciona a mentoria e quais são os próximos passos
+                        para a sua loja.</p>
+                </div><a class="btn" data-reveal
+                    href="https://wa.me/5547992454021?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20de%20TikTok%20Shop%20e%20Mercado%20Livre."
+                    target="_blank" rel="noopener noreferrer">Chamar no WhatsApp ↗</a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><a class="brand" href="#inicio"><span
+                    class="brand-mark">e.</span>TRACTION</a>
+            <p>Mentoria prática de vendas no TikTok Shop e no Mercado Livre.</p>
+        </div>
+        <div class="container">
+            <div class="footer-bottom"><span>© <span id="year"></span> Etraction. Todos os direitos
+                    reservados.</span><span>Desenvolvido por: <a href="https://github.com/viniciuskbaumann"
+                        target="_blank" rel="noopener">Vinicius Kuhl Baumann</a></span></div>
+        </div>
+    </footer>
+    <script>(() => { const header = document.querySelector('#header'), menu = document.querySelector('#menuToggle'), nav = document.querySelector('#nav'), items = document.querySelectorAll('[data-reveal]'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; const sync = () => header.classList.toggle('scrolled', window.scrollY > 18); window.addEventListener('scroll', sync, { passive: true }); sync(); menu.addEventListener('click', () => { const open = document.body.classList.toggle('menu-open'); nav.classList.toggle('mobile-open', open); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu') }); nav.addEventListener('click', e => { if (e.target.closest('a')) { document.body.classList.remove('menu-open'); nav.classList.remove('mobile-open'); menu.setAttribute('aria-expanded', 'false') } }); if (reduce || !('IntersectionObserver' in window)) { items.forEach(item => item.classList.add('visible')); return } const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target) } }), { threshold: .12 }); items.forEach(item => observer.observe(item)) })();</script>
+    <script>(() => { const data = { tiktok: { title: 'TikTok Shop', status: 'estrutura em construção', description: 'Conteúdo comprável, LIVE Commerce, criadores e afiliados trabalhando juntos para gerar descoberta e intenção de compra.', metrics: ['LIVE', '03', '01'], labels: ['formato prioritário', 'frentes de conteúdo', 'canal em ativação'], note: 'Próximo passo: publicar, medir e corrigir o primeiro ciclo.' }, marketplace: { title: 'Mercado Livre', status: 'operação de marketplace', description: 'Catálogo, reputação, anúncios, logística e conversão organizados para transformar busca em venda recorrente.', metrics: ['CATÁLOGO', '98%', 'FULL'], labels: ['base comercial', 'reputação desejada', 'logística em foco'], note: 'Próximo passo: organizar anúncios, margem e experiência de entrega.' } }; const panel = document.querySelector('#channelPanel'); const tabs = document.querySelectorAll('[data-channel-tab]'); const title = document.querySelector('#channelTitle'); const status = document.querySelector('#channelStatus'); const description = document.querySelector('#channelDescription'); const note = document.querySelector('#channelNote'); const metrics = [document.querySelector('#metricOne'), document.querySelector('#metricTwo'), document.querySelector('#metricThree')]; const labels = [document.querySelector('#metricOneLabel'), document.querySelector('#metricTwoLabel'), document.querySelector('#metricThreeLabel')]; tabs.forEach(tab => tab.addEventListener('click', () => { const key = tab.dataset.channelTab; const item = data[key]; panel.dataset.channel = key; title.innerHTML = key === "tiktok" ? "<img class=\"tiktok-logo\" src=\"assets/tiktok-shop-logo.svg\" alt=\"TikTok Shop\"><span class=\"channel-title-fallback\">TikTok Shop</span>" : item.title; status.textContent = item.status; description.textContent = item.description; note.textContent = item.note; metrics.forEach((metric, index) => metric.textContent = item.metrics[index]); labels.forEach((label, index) => label.textContent = item.labels[index]); tabs.forEach(other => { const active = other === tab; other.classList.toggle('is-active', active); other.setAttribute('aria-selected', String(active)) }) })); document.querySelector('#year').textContent = new Date().getFullYear() })();</script>
+    <script>(() => { document.querySelectorAll(".kickoff-card").forEach(card => card.addEventListener("click", () => { document.querySelectorAll(".kickoff-card").forEach(item => item.classList.remove("is-active")); card.classList.add("is-active") })); document.querySelectorAll(".timeline-item").forEach(item => item.addEventListener("click", () => { document.querySelectorAll(".timeline-item").forEach(other => other.classList.remove("is-active")); item.classList.add("is-active") })) })();</script>
+</body>
+
+</html>
