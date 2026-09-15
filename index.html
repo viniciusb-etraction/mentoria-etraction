@@ -5042,6 +5042,255 @@
             }
         }
     </style>
+
+    <style id="etm-timeline-mobile-fix-v14">
+        @media (max-width: 700px) {
+            .etm-timeline--dark {
+                padding: 70px 0 76px !important;
+            }
+
+            .etm-timeline__head {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                margin-bottom: 30px !important;
+            }
+
+            .etm-timeline__head .etm-eyebrow {
+                margin-bottom: 16px !important;
+            }
+
+            .etm-timeline__head .etm-section-title {
+                max-width: 100% !important;
+                font-size: clamp(38px, 10.5vw, 52px) !important;
+                line-height: .98 !important;
+                letter-spacing: -.055em !important;
+            }
+
+            .etm-timeline__head .etm-section-intro {
+                max-width: 100% !important;
+                margin: 0 !important;
+                font-size: 14px !important;
+                line-height: 1.65 !important;
+            }
+
+            .etm-timeline-table-wrap {
+                width: 100% !important;
+                margin: 0 !important;
+                overflow: visible !important;
+                border: 0 !important;
+                border-radius: 0 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+
+            .etm-timeline-table-head {
+                display: none !important;
+            }
+
+            .etm-timeline-table {
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+                overflow: visible !important;
+                scrollbar-gutter: auto !important;
+            }
+
+            .etm-timeline-row {
+                width: 100% !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                overflow: hidden !important;
+                border: 1px solid rgba(255, 255, 255, .10) !important;
+                border-radius: 20px !important;
+                background:
+                    radial-gradient(100% 150% at 100% 0%, rgba(228, 41, 33, .08), transparent 56%),
+                    rgba(255, 255, 255, .026) !important;
+                box-shadow:
+                    0 18px 42px rgba(0, 0, 0, .18),
+                    inset 0 1px 0 rgba(255, 255, 255, .025) !important;
+            }
+
+            .etm-timeline-row:hover {
+                transform: none !important;
+                background:
+                    radial-gradient(100% 150% at 100% 0%, rgba(228, 41, 33, .08), transparent 56%),
+                    rgba(255, 255, 255, .026) !important;
+            }
+
+            .etm-timeline-row>div {
+                width: 100% !important;
+                min-width: 0 !important;
+                grid-column: 1 !important;
+                grid-row: auto !important;
+                padding: 16px 18px !important;
+                border-right: 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, .07) !important;
+            }
+
+            .etm-timeline-row>div:last-child {
+                border-bottom: 0 !important;
+            }
+
+            .etm-timeline-step,
+            .etm-timeline-step.etm-timeline-step--initial {
+                min-height: 64px !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 14px !important;
+                padding: 14px 18px !important;
+                color: #fff !important;
+                background: linear-gradient(110deg, #ef2d26 0%, #d51f1a 55%, #a91510 100%) !important;
+                border-right: 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, .10) !important;
+                text-align: left !important;
+            }
+
+            .etm-timeline-step small,
+            .etm-timeline-step.etm-timeline-step--initial small {
+                display: inline-flex !important;
+                align-items: center !important;
+                margin: 0 !important;
+                padding: 5px 8px !important;
+                border: 1px solid rgba(255, 255, 255, .18) !important;
+                border-radius: 999px !important;
+                color: rgba(255, 255, 255, .76) !important;
+                background: rgba(255, 255, 255, .075) !important;
+                font: 800 8px/1 "Manrope", sans-serif !important;
+                letter-spacing: .13em !important;
+                white-space: nowrap !important;
+            }
+
+            .etm-timeline-step strong {
+                max-width: calc(100% - 76px) !important;
+                color: #fff !important;
+                font: 800 24px/1 "Manrope", sans-serif !important;
+                letter-spacing: -.045em !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+
+            .etm-timeline-step--initial strong {
+                max-width: calc(100% - 86px) !important;
+                font-size: 19px !important;
+                letter-spacing: -.02em !important;
+                text-transform: uppercase !important;
+                white-space: nowrap !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+            }
+
+            .etm-timeline-focus,
+            .etm-timeline-study,
+            .etm-timeline-channels,
+            .etm-timeline-milestone {
+                display: block !important;
+            }
+
+            .etm-timeline-row small {
+                display: block !important;
+                margin: 0 0 8px !important;
+                color: #ff5f58 !important;
+                font: 800 8px/1 "Manrope", sans-serif !important;
+                letter-spacing: .14em !important;
+                text-transform: uppercase !important;
+            }
+
+            .etm-timeline-focus strong {
+                display: block !important;
+                color: #fff !important;
+                font: 800 15px/1.4 "Manrope", sans-serif !important;
+                letter-spacing: -.02em !important;
+            }
+
+            .etm-timeline-study span,
+            .etm-timeline-milestone span {
+                display: block !important;
+                color: rgba(255, 255, 255, .72) !important;
+                font-size: 12.5px !important;
+                line-height: 1.6 !important;
+            }
+
+            .etm-timeline-channels {
+                display: grid !important;
+                gap: 8px !important;
+            }
+
+            .etm-timeline-channels>small {
+                margin-bottom: 2px !important;
+            }
+
+            .etm-timeline-channels>span {
+                display: block !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 12px 13px !important;
+                border: 1px solid rgba(255, 255, 255, .055) !important;
+                border-radius: 12px !important;
+                background: rgba(255, 255, 255, .035) !important;
+                color: rgba(255, 255, 255, .65) !important;
+                font-size: 12px !important;
+                line-height: 1.58 !important;
+            }
+
+            .etm-timeline-channels>span b {
+                display: inline !important;
+                margin-right: 2px !important;
+            }
+
+            .etm-timeline-channels .etm-name-tiktok,
+            .etm-timeline-channels .etm-name-mercado-livre {
+                display: inline !important;
+                font-weight: 900 !important;
+            }
+
+            .etm-timeline-milestone::before {
+                content: "" !important;
+                display: block !important;
+                width: 42px !important;
+                height: 3px !important;
+                margin: 0 0 12px !important;
+                border-radius: 999px !important;
+                background: var(--etm-red) !important;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .etm-timeline__head .etm-section-title {
+                font-size: clamp(36px, 10.8vw, 46px) !important;
+            }
+
+            .etm-timeline-row>div {
+                padding: 15px 16px !important;
+            }
+
+            .etm-timeline-step,
+            .etm-timeline-step.etm-timeline-step--initial {
+                min-height: 60px !important;
+                padding: 13px 16px !important;
+            }
+
+            .etm-timeline-step strong {
+                font-size: 22px !important;
+            }
+
+            .etm-timeline-step--initial strong {
+                font-size: 18px !important;
+            }
+
+            .etm-timeline-channels>span {
+                padding: 11px 12px !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -5085,8 +5334,6 @@
                     </div>
                     <div class="etm-hero__proof">
                         <span><strong>6 meses</strong> de acompanhamento</span>
-                        <i></i>
-                        <span><strong>2 trilhas</strong> específicas por canal</span>
                         <i></i>
                         <span><strong>7 encontros</strong> online</span>
                     </div>
@@ -5228,7 +5475,7 @@
                                 <span class="etm-method-card__index">01</span>
                             </div>
                             <h3>Aprender</h3>
-                            <p>Aulas gravadas curtas e organizadas para entender operação, catálogo, conteúdo, mídia e
+                            <p>Aulas gravadas e organizadas para entender operação, catálogo, conteúdo, mídia e
                                 regras dos dois canais.</p>
                             <span class="etm-method-card__link"><span>Conhecimento</span><b>↗</b></span>
                         </article>
