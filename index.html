@@ -5289,6 +5289,64 @@
                 padding: 11px 12px !important;
             }
         }
+
+        /* Cards que não possuem número */
+.etm-card__value--text {
+    display: flex;
+    align-items: flex-end;
+    min-height: 58px;
+}
+
+.etm-card__value--text .etm-card__unit {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-style: normal;
+    color: #ffffff;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 699px) {
+    .etm-card__value--text {
+        min-height: 50px;
+    }
+
+    .etm-card__value--text .etm-card__unit {
+        font-size: 30px;
+        line-height: 1;
+    }
+}
+
+.etm-card__value--text {
+    display: flex;
+    align-items: flex-end;
+    min-height: 58px;
+}
+
+.etm-card__value--text .etm-card__unit {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-style: normal;
+    color: #ffffff;
+}
+
+@media (max-width: 699px) {
+    .etm-card__value--text {
+        min-height: 50px;
+    }
+
+    .etm-card__value--text .etm-card__unit {
+        font-size: 30px;
+        line-height: 1;
+    }
+}
     </style>
 
 </head>
@@ -6973,20 +7031,12 @@
                         </span>
 
 
-                        <div class="etm-card__value">
-
-                            <span
-                                class="etm-card__number etm-counter"
-                                data-target="1"
-                            >
-                                1
-                            </span>
-
-                            <em class="etm-card__unit">
-                                webinar semanal
-                            </em>
-
-                        </div>
+                        <!-- BÔNUS 02 - WEBINAR -->
+<div class="etm-card__value etm-card__value--text">
+    <em class="etm-card__unit">
+        webinar semanal
+    </em>
+</div>
 
 
                         <p class="etm-card__description">
@@ -7048,20 +7098,12 @@
                         </span>
 
 
-                        <div class="etm-card__value">
-
-                            <span
-                                class="etm-card__number etm-counter"
-                                data-target="1"
-                            >
-                                1
-                            </span>
-
-                            <em class="etm-card__unit">
-                                plano
-                            </em>
-
-                        </div>
+                        <!-- BÔNUS 03 - PLANO -->
+<div class="etm-card__value etm-card__value--text">
+    <em class="etm-card__unit">
+        plano
+    </em>
+</div>
 
 
                         <p class="etm-card__description">
@@ -7077,75 +7119,52 @@
                      BÔNUS 04
                 ================================================== -->
 
-                <article
-                    class="etm-card etm-card--bonus"
-                    data-card="08"
-                >
+<article class="etm-card etm-card--bonus" data-card="08">
 
-                    <span class="etm-card__bonus">
-                        Bônus
-                    </span>
+    <span class="etm-card__bonus">
+        Bônus
+    </span>
 
+    <div class="etm-card__window">
 
-                    <div class="etm-card__window">
+        <div class="etm-card__window-left">
+            <span class="etm-card__window-dot"></span>
 
-                        <div class="etm-card__window-left">
+            <span class="etm-card__window-title">
+                gamificação
+            </span>
+        </div>
 
-                            <span class="etm-card__window-dot"></span>
+        <div class="etm-card__drag-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-                            <span class="etm-card__window-title">
-                                gamificação
-                            </span>
+    </div>
 
-                        </div>
+    <div class="etm-card__content">
 
+        <span class="etm-card__index">
+            08
+        </span>
 
-                        <div
-                            class="etm-card__drag-icon"
-                            aria-hidden="true"
-                        >
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+        <div class="etm-card__value etm-card__value--text">
+            <em class="etm-card__unit">
+                gamificação
+            </em>
+        </div>
 
-                    </div>
+        <p class="etm-card__description">
+            Gamificação
+        </p>
 
+    </div>
 
-                    <div class="etm-card__content">
-
-                        <span class="etm-card__index">
-                            08
-                        </span>
-
-
-                        <div class="etm-card__value">
-
-                            <span
-                                class="etm-card__number etm-counter"
-                                data-target="1"
-                            >
-                                1
-                            </span>
-
-                            <em class="etm-card__unit">
-                                gamificação
-                            </em>
-
-                        </div>
-
-
-                        <p class="etm-card__description">
-                            Gamificação
-                        </p>
-
-                    </div>
-
-                </article>
-
+</article>
 
             </div>
 
